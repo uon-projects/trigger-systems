@@ -6,22 +6,16 @@ namespace Trigger
     {
         public QueueActions queue;
 
-
         [SerializeField] protected ETriggerRunMode runMode = ETriggerRunMode.SYNCHRONOUSLY;
         [SerializeField] protected ETriggerWorkMode workMode = ETriggerWorkMode.FIRE;
 
-
         public bool once = true;
-
 
         public bool debug;
 
-
         [SerializeField] protected int countTriggered;
 
-
         private ETriggerStates state = ETriggerStates.NOT_ACTIVATED;
-
 
         protected GameObject whoTriggered;
 
@@ -36,7 +30,6 @@ namespace Trigger
         }
 
         public abstract void Update();
-
 
         public void Run(GameObject obj)
         {
@@ -83,8 +76,7 @@ namespace Trigger
 
         public abstract void End();
 
-
-        protected bool UpdateSyn()
+        protected bool UpdateSync()
         {
             if (queue.Current() == null)
             {
@@ -107,12 +99,10 @@ namespace Trigger
             return CheckOver();
         }
 
-
-        protected bool UpdateAsyn()
+        protected bool UpdateAsync()
         {
             return CheckOver();
         }
-
 
         private bool CheckOver()
         {
@@ -151,7 +141,6 @@ namespace Trigger
             countTriggered++;
         }
 
-
         protected void PopAction(GameObject obj)
         {
             queue.Next();
@@ -164,12 +153,10 @@ namespace Trigger
             }
         }
 
-
         protected void RunSynchronously(GameObject obj)
         {
             PopAction(obj);
         }
-
 
         protected void RunAsynchronously(GameObject obj)
         {
@@ -177,7 +164,6 @@ namespace Trigger
             Log("Starting asyn actions");
             foreach (var action in queue.GetActions()) action.Run(obj);
         }
-
 
         protected bool IsAllActionsExecuted()
         {
@@ -214,7 +200,6 @@ namespace Trigger
         {
             return this.workMode == workMode;
         }
-
 
         protected abstract void Init();
     }

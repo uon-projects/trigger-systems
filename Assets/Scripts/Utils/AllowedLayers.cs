@@ -8,13 +8,9 @@ namespace Trigger
     {
         public List<int> list;
 
-
         public bool IsAllowed(int layer)
         {
-            if (IsEmpty())
-                return true;
-
-            return list.Contains(layer);
+            return IsEmpty() || list.Contains(layer);
         }
 
 
@@ -23,10 +19,9 @@ namespace Trigger
             return false;
         }
 
-
         private bool IsEmpty()
         {
-            return list != null && list.Count == 0;
+            return list is {Count: 0};
         }
     }
 }

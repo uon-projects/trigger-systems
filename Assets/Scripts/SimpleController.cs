@@ -7,11 +7,6 @@ public class SimpleController : MonoBehaviour
     public float speedMove = 150.0f;
     private GameObject usingItem;
 
-    private void Start()
-    {
-    }
-
-
     private void Update()
     {
         transform.Rotate(0f, Input.GetAxis("Horizontal") * Time.deltaTime * speedMove, 0f);

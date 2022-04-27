@@ -21,18 +21,14 @@ namespace Trigger
             SetState(ETriggerStates.NOT_ACTIVATED);
         }
 
-        private void Update()
-        {
-        }
-
         public void Log(string msg)
         {
             if (debug) Debug.Log(msg);
         }
 
-        public bool IsState(ETriggerStates state)
+        public bool IsState(ETriggerStates State)
         {
-            return this.state == state;
+            return this.state == State;
         }
 
         public void SetState(ETriggerStates state)

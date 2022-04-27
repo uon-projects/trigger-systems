@@ -23,11 +23,11 @@ namespace Trigger
                 {
                     if (IsState(ETriggerRunMode.ASYNCHRONOUSLY))
                     {
-                        if (!UpdateAsyn()) Continue();
+                        if (!UpdateAsync()) Continue();
                     }
                     else
                     {
-                        if (!UpdateSyn()) Continue();
+                        if (!UpdateSync()) Continue();
                     }
                 }
 

@@ -33,15 +33,15 @@ namespace Trigger
         public abstract void Update();
         public abstract void End();
 
-        public void SetState(ETriggerStates state)
+        public void SetState(ETriggerStates triggerState)
         {
-            this.state = state;
-            enabled = state == ETriggerStates.RUNNING;
+            state = triggerState;
+            enabled = triggerState == ETriggerStates.RUNNING;
         }
 
-        public bool IsState(ETriggerStates state)
+        public bool IsState(ETriggerStates triggerState)
         {
-            return this.state == state;
+            return state == triggerState;
         }
     }
 }
