@@ -34,7 +34,7 @@ namespace Trigger
                 beReplacedObject.transform.rotation,
                 parent ? anObject.transform : null);
 
-            DestroyObject(beReplacedObject);
+            Destroy(beReplacedObject);
 
             createdObject.SetActive(true);
             End();

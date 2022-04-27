@@ -5,7 +5,6 @@ public class SimpleController : MonoBehaviour
 {
     public float speedRotation = 3.0f;
     public float speedMove = 150.0f;
-    private GameObject usingItem;
 
     private void Update()
     {
@@ -15,6 +14,6 @@ public class SimpleController : MonoBehaviour
 
     public void Used()
     {
-        usingItem = null;
+        
     }
 }
