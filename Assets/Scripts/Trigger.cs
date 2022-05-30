@@ -22,6 +22,7 @@ namespace Trigger
         private void Start()
         {
             Init();
+            queue.PrepareList();
         }
 
         public void Log(string msg)
